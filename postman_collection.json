@@ -77,6 +77,56 @@
 			"response": []
 		},
 		{
+			"name": "Pokemon edit",
+			"request": {
+				"url": "{{HOST}}/pokemon/6444fe7df8f65ca34e8e2cb1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NDI0NzY4NThkYWUzMmM2M2EyYzY3YyIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjgyMjM5ODk2LCJleHAiOjE2ODIzMjYyOTZ9._5w6qnBxA1mNYm_HD-7ljkKx09m4XMBx3OTa38GMDUA",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"charizar3\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Pokemon delete",
+			"request": {
+				"url": "{{HOST}}/pokemon/6444fe7df8f65ca34e8e2cb1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NDI0NzY4NThkYWUzMmM2M2EyYzY3YyIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjgyMjM5ODk2LCJleHAiOjE2ODIzMjYyOTZ9._5w6qnBxA1mNYm_HD-7ljkKx09m4XMBx3OTa38GMDUA",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
 			"name": "User create",
 			"request": {
 				"url": "http://localhost:3000/user",

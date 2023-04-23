@@ -12,7 +12,7 @@ const Pokemon = mongoose.model('Pokemon', new mongoose.Schema({
     description: String,
     user: {
         required: true,
-        type: mongoose.Types.ObjectId,
+        type: String,
         ref: 'User',
     }
 }, { versionKey: false, timestamps: true }));
