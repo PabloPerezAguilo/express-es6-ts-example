@@ -1,0 +1,120 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Pokemon CRUD",
+		"_postman_id": "cc0d4c40-f920-f6cc-43be-a95d0a90d2da",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pokemon list",
+			"request": {
+				"url": {
+					"raw": "{{HOST}}/pokemon/?name=cha",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"pokemon",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "cha",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer XXXXXX",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"pablo\", \"test\":3}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Pokemon create",
+			"request": {
+				"url": "{{HOST}}/pokemon",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NDI0NzY4NThkYWUzMmM2M2EyYzY3YyIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjgyMjM5ODk2LCJleHAiOjE2ODIzMjYyOTZ9._5w6qnBxA1mNYm_HD-7ljkKx09m4XMBx3OTa38GMDUA",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"charizar\", \"type\":\"fire\", \"description\": \"asdasd\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "User create",
+			"request": {
+				"url": "http://localhost:3000/user",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"yo@yo.es\",\n\t\"password\": \"testtest\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "User login",
+			"request": {
+				"url": "localhost:3000/user/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"yo@yo.es\",\n\t\"password\": \"testtest\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
