@@ -22,6 +22,6 @@ app.use('/user', userRouter)
 app.use(handlerError);
 
 
-app.listen(3000,()=>console.log('Servidor levantado en 3000'));
+app.listen(CONF.PORT,()=>console.log('Servidor levantado en 3000'));
 
 
