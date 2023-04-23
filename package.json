@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "node -r dotenv-safe/config ./dist/app.js",
+    "start": "tsc && node -r dotenv-safe/config ./dist/app.js",
     "start_dev": "nodemon"
   },
   "author": "",
