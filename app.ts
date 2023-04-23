@@ -15,6 +15,7 @@ const app = express();
 
 app.use(express.json());
 
+app.get('/', (req, res)=> res.send('Healthcheck: ok'))
 app.use('/pokemon', pokemonRouter)
 app.use('/user', userRouter)
 
