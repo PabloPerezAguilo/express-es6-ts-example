@@ -12,6 +12,7 @@ export const auth = (req: Request, res: Response, next: NextFunction)=>{
     } catch(e){
         return next(new Error('TOKEN_INVALID'));
     }
+    next();
 }
 
 
@@ -21,6 +22,7 @@ export const handlerError = (err: Error | MongoServerError, req: Request, res: R
     if(err.message === 'NOT_FOUND') return res.status(404).json({error: 'NOT_FOUND'})
     if(err.message === 'PASSWORD_TOO_SHORT') return res.status(422).json({error: 'NOT_FOUND'})
     if(err instanceof MongoServerError && err.code === 11000) return res.status(422).json({error: 'DUPLICATE_ENTITY', entities: Object.keys(err.keyPattern)})
+    // Unknow error: print and send 500 http status
     console.error(err);
     return res.status(500).json({error: 'SERVER_ERROR', err})
 }

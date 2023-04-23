@@ -1,8 +1,9 @@
 import Pokemon from './model.js'
 
 export const listPokemon = async (name)=> {
-    if(name) return Pokemon.find({})
-    return Pokemon.find({})
+    const filter: {name?: RegExp} = {};
+    if(name) filter.name = new RegExp(name, 'i')
+    return Pokemon.find(filter, {name: 1, type:1})
 }
 
 export const detailPokemon = async (id)=> {
@@ -10,12 +11,6 @@ export const detailPokemon = async (id)=> {
 }
 
 export const createPokemon = async (data, token)=> {
-    data.user = token.id;
-    return Pokemon.create(data);
-}
-
-//TODO
-export const deletePokemon = async (data, token)=> {
     data.user = token.id;
     return Pokemon.create(data);
 }
