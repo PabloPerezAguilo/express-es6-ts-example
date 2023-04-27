@@ -12,9 +12,9 @@ export const createUser = async (data)=> {
 }
 
 export const login = async (data)=> {
-    const user = await User.findOne({email: data.email}).select('+password');
+    const user = await User.findOne({where: {email: data.email}});
     if(!user) return null;
-    if(!(await bcrypt.compare(data.password, user.password))) return null
-    const token = jwt.sign({id: user._id, role: user.role}, CONF.JWT_SECRET, {expiresIn: '24h'});
+    if(!(await bcrypt.compare(data.password, user.getDataValue('password')))) return null
+    const token = jwt.sign({id: user.id, role: user.role}, CONF.JWT_SECRET, {expiresIn: '24h'});
     return {token}
 }

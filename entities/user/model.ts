@@ -1,21 +1,17 @@
-import mongoose from 'mongoose'
+import { Table, Model, Column, Unique } from 'sequelize-typescript';
 
-const User = mongoose.model('User', new mongoose.Schema({
-    password: {
-        type: String,
-        required: true,
-        select: false,
-    },
-    email: {
-        type: String,
-        required: true,
-        unique: true,
-    },
-    role: {
-        type: String,
-        required: true,
-        enum: ['USER', 'ADMIN']
-    },
-}, { versionKey: false, timestamps: true }));
+@Table
+export class User extends Model<User> {
+
+  @Unique
+  @Column
+  email: string;
+
+  @Column
+  password: string;
+
+  @Column
+  role: string;
+}
 
 export default User;
